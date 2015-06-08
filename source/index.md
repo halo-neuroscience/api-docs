@@ -18,67 +18,82 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the Halo Neuroscience API.  This is a WIP and currently only available to internal clients (iOS, admin).
 
 # Authentication
 
-> To authorize, use this code:
+Application authentication has not been implemented it.
 
-```ruby
-require 'kittn'
+For user requests after sign in (have link here), the Authorization header should include the user ID, followed by a colon,
+followed by the access token which is returned as a response to user sign in.  For example:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: 1:-gjzZa8aHs7M7wjyE8xU`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+The user ID and access token are returned upon user sign in.
 </aside>
 
-# Kittens
+# Users
 
-## Get All Kittens
+## Create A User
 
-```ruby
-require 'kittn'
+> This is the response from creating a user
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+```json
+{
+  "id": 1,
+  "email": "example@haloneuro.com",
+  "access_token": "-gjzZa8aHs7M7wjyE8xU"
+}
 ```
 
-```python
-import kittn
+### HTTP Request
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+`POST https://api.haloneuro.com/v1/users`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+email | NA | user email
+password | NA | account password
+
+# Sessions
+
+## Create a Session (Login)
+
+> This is the response from logging in
+
+```json
+{
+  "id": 1,
+  "email": "example@haloneuro.com",
+  "access_token": "-gjzZa8aHs7M7wjyE8xU"
+}
 ```
+
+### HTTP Request
+
+`POST https://api.haloneuro.com/v1/login`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+email | NA | user email
+password | NA | account password
+
+
+## Delete a Session (Logout)
+
+Coming Soon
+
+# Waveforms
+
+## Get All Waveforms
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "https://api.haloneuro.com/v1/waveforms"
 ```
 
 > The above command returns JSON structured like this:
@@ -87,57 +102,41 @@ curl "http://example.com/api/kittens"
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "Waveform 1",
+    "description": "This is a description of waveform 1",
+    "data": "AAAAAD0AHQAACvh/AQAAA...."
   },
   {
     "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "Waveform 2",
+    "description": "This is a description of waveform 2",
+    "data": "AEAf2cBALV6AQDqmAEADJo...."
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all waveforms.
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`GET https://api.haloneuro.com/v1/waveforms`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+NA | NA | NA
+NA | NA | NA
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+Binary data is base64 encoded so can be escaped and placed into string element for JSON.
+Typical waveform file is about 20KB, base64 expands size to about 27KB.
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get a Specific Waveform
 
 ```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
+curl "https://api.haloneuro.com/v1/waveforms/2"
 ```
 
 > The above command returns JSON structured like this:
@@ -145,24 +144,25 @@ curl "http://example.com/api/kittens/3"
 ```json
 {
   "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "name": "Waveform 2",
+  "description": "This is a description of waveform 2",
+  "data": "AEAf2cBALV6AQDqmAEADJo...."
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+This endpoint retrieves a specific waveform.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://api.haloneuro.com/v1/waveforms/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the cat to retrieve
+ID | The ID of the waveform to retrieve
 
+<aside class="notice">
+Binary data is base64 encoded so can be escaped and placed into string element for JSON.
+Typical waveform file is about 20KB, base64 expands size to about 27KB.
+</aside>
