@@ -104,13 +104,17 @@ curl "https://api.haloneuro.com/v1/waveforms"
     "id": 1,
     "name": "Waveform 1",
     "description": "This is a description of waveform 1",
-    "data": "AAAAAD0AHQAACvh/AQAAA...."
+    "data": "AAAAAD0AHQAACvh/AQAAA....",
+    "bytesize": 382,
+    "created_at": "2015-06-10T12:05:23.800Z"
   },
   {
     "id": 2,
     "name": "Waveform 2",
     "description": "This is a description of waveform 2",
-    "data": "AEAf2cBALV6AQDqmAEADJo...."
+    "data": "AEAf2cBALV6AQDqmAEADJo....",
+    "bytesize": 20054,
+    "created_at": "2015-06-11T16:02:38.800Z"
   }
 ]
 ```
@@ -146,7 +150,9 @@ curl "https://api.haloneuro.com/v1/waveforms/2"
   "id": 2,
   "name": "Waveform 2",
   "description": "This is a description of waveform 2",
-  "data": "AEAf2cBALV6AQDqmAEADJo...."
+  "data": "AEAf2cBALV6AQDqmAEADJo....",
+  "bytesize": 20054,
+  "created_at": "2015-06-11T16:02:38.800Z"
 }
 ```
 
@@ -165,4 +171,36 @@ ID | The ID of the waveform to retrieve
 <aside class="notice">
 Binary data is base64 encoded so can be escaped and placed into string element for JSON.
 Typical waveform file is about 20KB, base64 expands size to about 27KB.
+</aside>
+
+## Create A Waveform
+
+> This is the response from creating a waveform
+
+```json
+{
+  "id": 2,
+  "name": "Waveform 2",
+  "description": "This is a description of waveform 2",
+  "data": "AEAf2cBALV6AQDqmAEADJo....",
+  "bytesize": 20054,
+  "created_at": "2015-06-11T16:02:38.800Z"
+}
+```
+
+### HTTP Request
+
+`POST https://api.haloneuro.com/v1/waveforms`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+name | NA | waveform name
+description | NA | waveform description
+data | NA | waveform file
+
+<aside class="notice">
+File along with name and description should be sent as part of multipart/form-data POST.
+Support for uploading as base64 encoded JSON coming soon.
 </aside>
