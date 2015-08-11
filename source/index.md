@@ -42,6 +42,7 @@ The user ID and access token are returned upon user sign in.
 ```json
 {
   "id": 1,
+  "name": "John Doe",
   "email": "example@haloneuro.com",
   "access_token": "-gjzZa8aHs7M7wjyE8xU"
 }
@@ -55,6 +56,7 @@ The user ID and access token are returned upon user sign in.
 
 Parameter | Default | Description
 --------- | ------- | -----------
+name | NA | user name
 email | NA | user email
 password | NA | account password
 
@@ -67,6 +69,7 @@ password | NA | account password
 ```json
 {
   "id": 1,
+  "name": "John Doe",
   "email": "example@haloneuro.com",
   "access_token": "-gjzZa8aHs7M7wjyE8xU"
 }
