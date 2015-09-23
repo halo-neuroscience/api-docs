@@ -108,7 +108,29 @@ curl "https://api.haloneuro.com/v1/waveforms"
     "name": "Waveform 1",
     "description": "This is a description of waveform 1",
     "data": "AAAAAD0AHQAACvh/AQAAA....",
-    "bytesize": 382,
+    "byte_size": 382,
+    "duration_in_seconds": 600,
+    "impedance_waveform": "AABQABAA...",
+    "clip_config": {
+      "left": true,
+      "center": true,
+      "right": true,
+      "description": "All clips should be installed"
+    },
+    "visual_profile": {
+      "stim_type_image_url": {
+        "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/training_1x/original.png?12345",
+        "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/training_2x/original.png?12345",
+        "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/training_3x/original.png?12345"
+      },
+      "remote_bg_image_url": {
+        "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_1x/original.png?12345",
+        "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_2x/original.png?12345",
+        "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_3x/original.png?12345"
+      },
+      "gradient_start_hex": "#AA9FFF",
+      "gradient_end_hex": "#FF7399"
+    }
     "created_at": "2015-06-10T12:05:23.800Z"
   },
   {
@@ -116,7 +138,29 @@ curl "https://api.haloneuro.com/v1/waveforms"
     "name": "Waveform 2",
     "description": "This is a description of waveform 2",
     "data": "AEAf2cBALV6AQDqmAEADJo....",
-    "bytesize": 20054,
+    "byte_size": 20054,
+    "duration_in_seconds": 600,
+    "impedance_waveform": "AABQABAA...",
+    "clip_config": {
+      "left": true,
+      "center": false,
+      "right": true,
+      "description": "Left and Right clips should be installed"
+    },
+    "visual_profile": {
+      "stim_type_image_url": {
+        "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_1x/original.png?12345",
+        "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_2x/original.png?12345",
+        "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_3x/original.png?12345"
+      },
+      "remote_bg_image_url": {
+        "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
+        "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
+        "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
+      },
+      "gradient_start_hex": "#AA9FFF",
+      "gradient_end_hex": "#FF7399"
+    }
     "created_at": "2015-06-11T16:02:38.800Z"
   }
 ]
@@ -154,7 +198,29 @@ curl "https://api.haloneuro.com/v1/waveforms/2"
   "name": "Waveform 2",
   "description": "This is a description of waveform 2",
   "data": "AEAf2cBALV6AQDqmAEADJo....",
-  "bytesize": 20054,
+  "byte_size": 20054,
+  "duration_in_seconds": 600,
+  "impedance_waveform": "AABQABAA...",
+  "clip_config": {
+    "left": true,
+    "center": false,
+    "right": true,
+    "description": "Left and Right clips should be installed"
+  },
+  "visual_profile": {
+    "stim_type_image_url": {
+      "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_1x/original.png?12345",
+      "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_2x/original.png?12345",
+      "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_3x/original.png?12345"
+    },
+    "remote_bg_image_url": {
+      "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
+      "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
+      "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
+    },
+    "gradient_start_hex": "#AA9FFF",
+    "gradient_end_hex": "#FF7399"
+  }
   "created_at": "2015-06-11T16:02:38.800Z"
 }
 ```
@@ -186,7 +252,29 @@ Typical waveform file is about 20KB, base64 expands size to about 27KB.
   "name": "Waveform 2",
   "description": "This is a description of waveform 2",
   "data": "AEAf2cBALV6AQDqmAEADJo....",
-  "bytesize": 20054,
+  "byte_size": 20054,
+  "duration_in_seconds": 600,
+  "impedance_waveform": "AABQABAA...",
+  "clip_config": {
+    "left": true,
+    "center": false,
+    "right": true,
+    "description": "Left and Right clips should be installed"
+  },
+  "visual_profile": {
+    "stim_type_image_url": {
+      "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_1x/original.png?12345",
+      "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_2x/original.png?12345",
+      "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/training_3x/original.png?12345"
+    },
+    "remote_bg_image_url": {
+      "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
+      "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
+      "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
+    },
+    "gradient_start_hex": "#AA9FFF",
+    "gradient_end_hex": "#FF7399"
+  }
   "created_at": "2015-06-11T16:02:38.800Z"
 }
 ```
