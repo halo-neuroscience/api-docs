@@ -130,7 +130,19 @@ curl "https://api.haloneuro.com/v1/waveforms"
       },
       "gradient_start_hex": "#AA9FFF",
       "gradient_end_hex": "#FF7399"
-    }
+    },
+    "level_multiplier": {
+      "1": "0x45",
+      "2": "0x5a",
+      "3": "0x69",
+      "4": "0x76",
+      "5": "0x80",
+      "6": "0x87",
+      "7": "0x8e",
+      "8": "0x94",
+      "9": "0x9b",
+      "10": "0xa0"
+    },
     "created_at": "2015-06-10T12:05:23.800Z"
   },
   {
@@ -160,7 +172,19 @@ curl "https://api.haloneuro.com/v1/waveforms"
       },
       "gradient_start_hex": "#AA9FFF",
       "gradient_end_hex": "#FF7399"
-    }
+    },
+    "level_multiplier": {
+      "1": "0x45",
+      "2": "0x5a",
+      "3": "0x69",
+      "4": "0x76",
+      "5": "0x80",
+      "6": "0x87",
+      "7": "0x8e",
+      "8": "0x94",
+      "9": "0x9b",
+      "10": "0xa0"
+    },
     "created_at": "2015-06-11T16:02:38.800Z"
   }
 ]
@@ -220,7 +244,19 @@ curl "https://api.haloneuro.com/v1/waveforms/2"
     },
     "gradient_start_hex": "#AA9FFF",
     "gradient_end_hex": "#FF7399"
-  }
+  },
+  "level_multiplier": {
+    "1": "0x45",
+    "2": "0x5a",
+    "3": "0x69",
+    "4": "0x76",
+    "5": "0x80",
+    "6": "0x87",
+    "7": "0x8e",
+    "8": "0x94",
+    "9": "0x9b",
+    "10": "0xa0"
+  },
   "created_at": "2015-06-11T16:02:38.800Z"
 }
 ```
@@ -274,7 +310,19 @@ Typical waveform file is about 20KB, base64 expands size to about 27KB.
     },
     "gradient_start_hex": "#AA9FFF",
     "gradient_end_hex": "#FF7399"
-  }
+  },
+  "level_multiplier": {
+    "1": "0x45",
+    "2": "0x5a",
+    "3": "0x69",
+    "4": "0x76",
+    "5": "0x80",
+    "6": "0x87",
+    "7": "0x8e",
+    "8": "0x94",
+    "9": "0x9b",
+    "10": "0xa0"
+  },
   "created_at": "2015-06-11T16:02:38.800Z"
 }
 ```
