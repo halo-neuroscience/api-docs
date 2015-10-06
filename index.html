@@ -52,12 +52,12 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<p>Application authentication has not been implemented it.</p>
+<p>Application authentication has not been implemented yet.</p>
 
-<p>For user requests after sign in (have link here), the Authorization header should include the user ID, followed by a colon,
+<p>For user requests after sign in (have link here), the Authorization header should include &ldquo;Bearer&rdquo;, followed by the user ID, followed by a colon,
 followed by the access token which is returned as a response to user sign in.  For example:</p>
 
-<p><code class="prettyprint">Authorization: 1:-gjzZa8aHs7M7wjyE8xU</code></p>
+<p><code class="prettyprint">Authorization: Bearer 1:-gjzZa8aHs7M7wjyE8xU</code></p>
 
 <aside class="notice">
 The user ID and access token are returned upon user sign in.
