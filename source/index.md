@@ -22,12 +22,12 @@ Welcome to the Halo Neuroscience API.  This is a WIP and currently only availabl
 
 # Authentication
 
-Application authentication has not been implemented it.
+Application authentication has not been implemented yet.
 
-For user requests after sign in (have link here), the Authorization header should include the user ID, followed by a colon,
+For user requests after sign in (have link here), the Authorization header should include "Bearer", followed by the user ID, followed by a colon,
 followed by the access token which is returned as a response to user sign in.  For example:
 
-`Authorization: 1:-gjzZa8aHs7M7wjyE8xU`
+`Authorization: Bearer 1:-gjzZa8aHs7M7wjyE8xU`
 
 <aside class="notice">
 The user ID and access token are returned upon user sign in.
