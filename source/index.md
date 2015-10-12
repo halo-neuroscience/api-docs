@@ -22,7 +22,9 @@ Welcome to the Halo Neuroscience API.  This is a WIP and currently only availabl
 
 # Authentication
 
-Application authentication has not been implemented yet.
+For client requests that are not user specific, the Authorization header should include "Token", followed by the client key.  For example:
+
+`Authorization: Token 43cdfc04d99680dcc9828bd44ff41`
 
 For user requests after sign in (have link here), the Authorization header should include "Bearer", followed by the user ID, followed by a colon,
 followed by the access token which is returned as a response to user sign in.  For example:
