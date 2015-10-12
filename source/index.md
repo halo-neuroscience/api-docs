@@ -26,7 +26,7 @@ For client requests that are not user specific, the Authorization header should 
 
 `Authorization: Token 43cdfc04d99680dcc9828bd44ff41`
 
-For user requests after sign in (have link here), the Authorization header should include "Bearer", followed by the user ID, followed by a colon,
+For user requests after sign in (see Sessions), the Authorization header should include "Bearer", followed by the user ID, followed by a colon,
 followed by the access token which is returned as a response to user sign in.  For example:
 
 `Authorization: Bearer 1:-gjzZa8aHs7M7wjyE8xU`
