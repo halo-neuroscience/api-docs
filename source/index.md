@@ -426,7 +426,7 @@ ID | The ID of the event to retrieve
 message_content is in JSON format.
 </aside>
 
-## Create A Event
+## Create An Event
 
 > This is the response from creating a event
 
@@ -456,3 +456,62 @@ timestamp | NA | datetime of event (default is current time)
 <aside class="notice">
 message_content should be in JSON format.
 </aside>
+
+# Stimulations
+
+## Log A Stimulation Event
+
+> This is the response from logging a stimulation event
+
+```json
+  {
+    "id": 2,
+    "user_id": "5",
+    "waveform_id": "12",
+    "start_time": "2015-06-11T12:05:23.800Z",
+    "end_time": "2015-06-11T12:25:23.800Z"
+  }
+```
+This endpoint should include the Authorization Bearer header that
+includes the user token.  In most cases the end_time parameter will not
+be included since this should be submitted immediately after a stimulation
+session is started.  Once the stimulation is finished, the end_time should be
+updated via the PUT request.
+
+### HTTP Request
+
+`POST https://api.haloneuro.com/v1/stimulations`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+waveform_id | NA | waveform id
+start_time | NA | datetime of stimulation starting (default is current time)
+end_time | NA | datetime of stimulation ending (optional)
+
+## Update A Stimulation Event
+
+> This is the response from updating a stimulation event
+
+```json
+  {
+    "id": 2,
+    "end_time": "2015-06-11T12:25:23.800Z"
+  }
+```
+This endpoint should include the Authorization Bearer header that
+includes the user token.  This should be called immediately after a stimulation
+session has ended.  The only parameters accepted are the stimulation
+event ID (received in the initial POST) and the end_time. If this is not called,
+it is assumed that the stimulation session was never completed.
+
+### HTTP Request
+
+`PUT https://api.haloneuro.com/v1/stimulations/[stimulation_event_id]`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+end_time | NA | datetime of stimulation ending
