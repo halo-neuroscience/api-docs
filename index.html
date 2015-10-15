@@ -611,10 +611,10 @@ message_content should be in JSON format.
 </span></code></pre>
 
 <p>This endpoint should include the Authorization Bearer header that
-includes the user token.  In most cases the end_time parameter will not
-be included since this should be submitted immediately after a stimulation
-session is started.  Once the stimulation is finished, the end_time should be
-updated via the PUT request.</p>
+includes the user token.  If online, this can be submitted immediately without
+an end_time upon session start, and then the end_time can be updated via the PUT request.
+If the stimulation was performed offline and the logging is being reported via an offline queue,
+the end_time can be included as well to signify the session was completed.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -661,7 +661,8 @@ updated via the PUT request.</p>
 includes the user token.  This should be called immediately after a stimulation
 session has ended.  The only parameters accepted are the stimulation
 event ID (received in the initial POST) and the end_time. If this is not called,
-it is assumed that the stimulation session was never completed.</p>
+it is assumed that the stimulation session was never completed unless the initial
+POST has the end_time field populated.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
