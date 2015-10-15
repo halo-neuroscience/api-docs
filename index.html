@@ -541,7 +541,7 @@ message_content is in JSON format.
 message_content is in JSON format.
 </aside>
 
-<h2 id="create-a-event">Create A Event</h2>
+<h2 id="create-an-event">Create An Event</h2>
 
 <blockquote>
 <p>This is the response from creating a event</p>
@@ -593,6 +593,95 @@ message_content is in JSON format.
 <aside class="notice">
 message_content should be in JSON format.
 </aside>
+
+<h1 id="stimulations">Stimulations</h1>
+
+<h2 id="log-a-stimulation-event">Log A Stimulation Event</h2>
+
+<blockquote>
+<p>This is the response from logging a stimulation event</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:25:23.800Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint should include the Authorization Bearer header that
+includes the user token.  In most cases the end_time parameter will not
+be included since this should be submitted immediately after a stimulation
+session is started.  Once the stimulation is finished, the end_time should be
+updated via the PUT request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://api.haloneuro.com/v1/stimulations</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>waveform_id</td>
+<td>NA</td>
+<td>waveform id</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>NA</td>
+<td>datetime of stimulation starting (default is current time)</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>NA</td>
+<td>datetime of stimulation ending (optional)</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-a-stimulation-event">Update A Stimulation Event</h2>
+
+<blockquote>
+<p>This is the response from updating a stimulation event</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:25:23.800Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint should include the Authorization Bearer header that
+includes the user token.  This should be called immediately after a stimulation
+session has ended.  The only parameters accepted are the stimulation
+event ID (received in the initial POST) and the end_time. If this is not called,
+it is assumed that the stimulation session was never completed.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.haloneuro.com/v1/stimulations/[stimulation_event_id]</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>end_time</td>
+<td>NA</td>
+<td>datetime of stimulation ending</td>
+</tr>
+</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
