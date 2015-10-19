@@ -361,7 +361,7 @@ Support for uploading as base64 encoded JSON coming soon.
     "end_time": "2015-06-11T12:25:23.800Z"
   }
 ```
-(NOT IMPLEMENTED YET) - This endpoint should include the Authorization Bearer header that
+This endpoint should include the Authorization Bearer header that
 includes the user token.  If online, this can be submitted immediately without
 an end_time upon session start, and then the end_time can be updated via the PUT request.
 If the stimulation was performed offline and the logging is being reported via an offline queue,
@@ -389,7 +389,7 @@ end_time | NA | datetime of stimulation ending (optional)
     "end_time": "2015-06-11T12:25:23.800Z"
   }
 ```
-(NOT IMPLEMENTED YET) - This endpoint should include the Authorization Bearer header that
+This endpoint should include the Authorization Bearer header that
 includes the user token.  This should be called immediately after a stimulation
 session has ended.  The only parameters accepted are the stimulation
 event ID (received in the initial POST) and the end_time. If this is not called,
