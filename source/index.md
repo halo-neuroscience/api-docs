@@ -348,6 +348,78 @@ Support for uploading as base64 encoded JSON coming soon.
 
 # Stimulations
 
+## Get All Stimulations
+
+```shell
+curl "https://api.haloneuro.com/v1/stimulations"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "user_id": "2",
+    "waveform_id": "12",
+    "start_time": "2015-08-12T14:12:14.000Z",
+    "end_time": "2015-08-12T14:32:14.000Z"
+  },
+  {
+    "id": 1,
+    "user_id": "2",
+    "waveform_id": "13",
+    "start_time": "2015-08-12T15:12:14.000Z",
+    "end_time": "2015-08-12T15:32:14.000Z"
+  }
+]
+```
+
+This endpoint retrieves all stimulations for a given user.
+The user's access token must be passed in via Authorization Bearer header.
+
+### HTTP Request
+
+`GET https://api.haloneuro.com/v1/stimulations`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+NA | NA | NA
+NA | NA | NA
+
+## Get a Specific Stimulation Session
+
+```shell
+curl "https://api.haloneuro.com/v1/stimulations/2"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "user_id": "2",
+  "waveform_id": "12",
+  "start_time": "2015-08-12T14:12:14.000Z",
+  "end_time": "2015-08-12T14:32:14.000Z"
+}
+```
+
+This endpoint retrieves a specific stimulation session for a given user.
+The user's access token must be passed in via Authorization Bearer header.
+
+### HTTP Request
+
+`GET https://api.haloneuro.com/v1/stimulations/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the stimulation session to retrieve
+
 ## Log A Stimulation Event
 
 > This is the response from logging a stimulation event
