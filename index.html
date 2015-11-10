@@ -52,14 +52,14 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<p>For client requests that are not user specific, the Authorization header should include &ldquo;Token&rdquo;, followed by the client key.  For example:</p>
+<p>All client requests should include the application client key using this format:</p>
 
-<p><code class="prettyprint">Authorization: Token 43cdfc04d99680dcc9828bd44ff41</code></p>
+<p><code class="prettyprint">Authorization: Halo client-key=43cdfc04d99680dcc9828bd44ff41</code></p>
 
-<p>For user requests after sign in (see Sessions), the Authorization header should include &ldquo;Bearer&rdquo;, followed by the user ID, followed by a colon,
-followed by the access token which is returned as a response to user sign in.  For example:</p>
+<p>For user requests after sign in (see Sessions), the Authorization header should also include the user ID and access token which is returned
+as a response to user sign in.  For example:</p>
 
-<p><code class="prettyprint">Authorization: Bearer 1:-gjzZa8aHs7M7wjyE8xU</code></p>
+<p><code class="prettyprint">Authorization: Halo client-key=43cdfc04d99680dcc9828bd44ff41, user-id=1, user-access-token=-gjzZa8aHs7M7wjyE8xU</code></p>
 
 <aside class="notice">
 The user ID and access token are returned upon user sign in.
