@@ -62,6 +62,49 @@ name | NA | user name
 email | NA | user email
 password | NA | account password
 
+# Organization
+
+## Get Organization
+
+> This is the response from getting an organization
+
+```json
+{
+  "id": 1,
+  "name": "Sparta",
+  "city": "Menlo Park",
+  "state": "California",
+  "participants": [
+    {
+      "id": 1,
+      "name": "Steve Smith"
+    },
+    {
+      "id": 2,
+      "name": "Jane Stevens"
+    },
+    {
+      "id": 1,
+      "name": "Bob Jones"
+    }
+  ]
+}
+```
+This endpoint retrieves the organization that is associated with
+the logged in user.  The user access token should be passed in via
+the Authorization Header..
+
+### HTTP Request
+
+`GET https://api.haloneuro.com/v1/organization`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+NA | NA | NA
+NA | NA | NA
+
 # Sessions
 
 ## Create a Session (Login)
@@ -73,7 +116,27 @@ password | NA | account password
   "id": 1,
   "name": "John Doe",
   "email": "example@haloneuro.com",
-  "access_token": "-gjzZa8aHs7M7wjyE8xU"
+  "access_token": "-gjzZa8aHs7M7wjyE8xU",
+  "organization": {
+    "id": 1,
+    "name": "Sparta",
+    "city": "Menlo Park",
+    "state": "California",
+    "participants": [
+      {
+        "id": 1,
+        "name": "Steve Smith"
+      },
+      {
+        "id": 2,
+        "name": "Jane Stevens"
+      },
+      {
+        "id": 1,
+        "name": "Bob Jones"
+      }
+    ]
+  }
 }
 ```
 
@@ -360,14 +423,14 @@ curl "https://api.haloneuro.com/v1/stimulations"
 [
   {
     "id": 1,
-    "user_id": "2",
+    "organization_participant_id": "2",
     "waveform_id": "12",
     "start_time": "2015-08-12T14:12:14.000Z",
     "end_time": "2015-08-12T14:32:14.000Z"
   },
   {
     "id": 1,
-    "user_id": "2",
+    "organization_participant_id": "2",
     "waveform_id": "13",
     "start_time": "2015-08-12T15:12:14.000Z",
     "end_time": "2015-08-12T15:32:14.000Z"
@@ -376,7 +439,7 @@ curl "https://api.haloneuro.com/v1/stimulations"
 ```
 
 This endpoint retrieves all stimulations for a given user.
-The user's access token must be passed in via Authorization Bearer header.
+The user's access token must be passed in via the Authorization header.
 
 ### HTTP Request
 
@@ -389,37 +452,6 @@ Parameter | Default | Description
 NA | NA | NA
 NA | NA | NA
 
-## Get a Specific Stimulation Session
-
-```shell
-curl "https://api.haloneuro.com/v1/stimulations/2"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 1,
-  "user_id": "2",
-  "waveform_id": "12",
-  "start_time": "2015-08-12T14:12:14.000Z",
-  "end_time": "2015-08-12T14:32:14.000Z"
-}
-```
-
-This endpoint retrieves a specific stimulation session for a given user.
-The user's access token must be passed in via Authorization Bearer header.
-
-### HTTP Request
-
-`GET https://api.haloneuro.com/v1/stimulations/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the stimulation session to retrieve
-
 ## Log A Stimulation Event
 
 > This is the response from logging a stimulation event
@@ -427,7 +459,7 @@ ID | The ID of the stimulation session to retrieve
 ```json
   {
     "id": 2,
-    "user_id": "5",
+    "organization_participant_id": "5",
     "waveform_id": "12",
     "start_time": "2015-06-11T12:05:23.800Z",
     "end_time": "2015-06-11T12:25:23.800Z"
@@ -450,30 +482,3 @@ Parameter | Default | Description
 waveform_id | NA | valid waveform id
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
-
-## Update A Stimulation Event
-
-> This is the response from updating a stimulation event
-
-```json
-  {
-    "id": 2,
-    "end_time": "2015-06-11T12:25:23.800Z"
-  }
-```
-This endpoint should include the Authorization Bearer header that
-includes the user token.  This should be called immediately after a stimulation
-session has ended.  The only parameters accepted are the stimulation
-event ID (received in the initial POST) and the end_time. If this is not called,
-it is assumed that the stimulation session was never completed unless the initial
-POST has the end_time field populated.
-
-### HTTP Request
-
-`PUT https://api.haloneuro.com/v1/stimulations/[stimulation_event_id]`
-
-### Body Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-end_time | NA | datetime of stimulation ending
