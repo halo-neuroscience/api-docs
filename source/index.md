@@ -465,11 +465,7 @@ NA | NA | NA
     "end_time": "2015-06-11T12:25:23.800Z"
   }
 ```
-This endpoint should include the Authorization Bearer header that
-includes the user token.  If online, this can be submitted immediately without
-an end_time upon session start, and then the end_time can be updated via the PUT request.
-If the stimulation was performed offline and the logging is being reported via an offline queue,
-the end_time can be included as well to signify the session was completed.
+This endpoint should include the user token via the Authorization header.
 
 ### HTTP Request
 
