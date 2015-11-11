@@ -110,6 +110,64 @@ The user ID and access token are returned upon user sign in.
 </tr>
 </tbody></table>
 
+<h1 id="organization">Organization</h1>
+
+<h2 id="get-organization">Get Organization</h2>
+
+<blockquote>
+<p>This is the response from getting an organization</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sparta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menlo Park"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steve Smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Stevens"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob Jones"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the organization that is associated with
+the logged in user.  The user access token should be passed in via
+the Authorization Header..</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.haloneuro.com/v1/organization</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody></table>
+
 <h1 id="sessions">Sessions</h1>
 
 <h2 id="create-a-session-(login)">Create a Session (Login)</h2>
@@ -121,7 +179,27 @@ The user ID and access token are returned upon user sign in.
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@haloneuro.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-gjzZa8aHs7M7wjyE8xU"</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-gjzZa8aHs7M7wjyE8xU"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sparta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menlo Park"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steve Smith"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Stevens"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob Jones"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -455,14 +533,14 @@ Support for uploading as base64 encoded JSON coming soon.
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organization_participant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T14:12:14.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T14:32:14.000Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organization_participant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T15:12:14.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T15:32:14.000Z"</span><span class="w">
@@ -471,7 +549,7 @@ Support for uploading as base64 encoded JSON coming soon.
 </span></code></pre>
 
 <p>This endpoint retrieves all stimulations for a given user.
-The user&rsquo;s access token must be passed in via Authorization Bearer header.</p>
+The user&rsquo;s access token must be passed in via the Authorization header.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -498,43 +576,6 @@ The user&rsquo;s access token must be passed in via Authorization Bearer header.
 </tr>
 </tbody></table>
 
-<h2 id="get-a-specific-stimulation-session">Get a Specific Stimulation Session</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.haloneuro.com/v1/stimulations/2"</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T14:12:14.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-12T14:32:14.000Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves a specific stimulation session for a given user.
-The user&rsquo;s access token must be passed in via Authorization Bearer header.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.haloneuro.com/v1/stimulations/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the stimulation session to retrieve</td>
-</tr>
-</tbody></table>
-
 <h2 id="log-a-stimulation-event">Log A Stimulation Event</h2>
 
 <blockquote>
@@ -542,7 +583,7 @@ The user&rsquo;s access token must be passed in via Authorization Bearer header.
 </blockquote>
 <pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organization_participant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:25:23.800Z"</span><span class="w">
@@ -582,44 +623,6 @@ the end_time can be included as well to signify the session was completed.</p>
 <td>end_time</td>
 <td>NA</td>
 <td>datetime of stimulation ending (optional)</td>
-</tr>
-</tbody></table>
-
-<h2 id="update-a-stimulation-event">Update A Stimulation Event</h2>
-
-<blockquote>
-<p>This is the response from updating a stimulation event</p>
-</blockquote>
-<pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:25:23.800Z"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint should include the Authorization Bearer header that
-includes the user token.  This should be called immediately after a stimulation
-session has ended.  The only parameters accepted are the stimulation
-event ID (received in the initial POST) and the end_time. If this is not called,
-it is assumed that the stimulation session was never completed unless the initial
-POST has the end_time field populated.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">PUT https://api.haloneuro.com/v1/stimulations/[stimulation_event_id]</code></p>
-
-<h3 id="body-parameters">Body Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>end_time</td>
-<td>NA</td>
-<td>datetime of stimulation ending</td>
 </tr>
 </tbody></table>
 
