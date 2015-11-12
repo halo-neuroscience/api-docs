@@ -62,6 +62,32 @@ name | NA | user name
 email | NA | user email
 password | NA | account password
 
+# Firmware Update
+
+## Get Latest Firmware Update
+
+> This is the response from getting a firmware update
+
+```json
+{
+  "id": 1,
+  "version_number": 0.1,
+  "url": "https://halo-api-images.s3.amazonaws.com/firmware/1/raw.bin?1447288415"
+}
+```
+This endpoint retrieves the most recent firmware version
+
+### HTTP Request
+
+`GET https://api.haloneuro.com/v1/firmware_update`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+NA | NA | NA
+NA | NA | NA
+
 # Organization
 
 ## Get Organization
