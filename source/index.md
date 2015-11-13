@@ -218,9 +218,7 @@ curl "https://api.haloneuro.com/v1/waveforms"
         "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_1x/original.png?12345",
         "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_2x/original.png?12345",
         "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/1/remote_3x/original.png?12345"
-      },
-      "gradient_start_hex": "#AA9FFF",
-      "gradient_end_hex": "#FF7399"
+      }
     },
     "level_multiplier": {
       "1": "0x45",
@@ -260,9 +258,7 @@ curl "https://api.haloneuro.com/v1/waveforms"
         "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
         "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
         "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
-      },
-      "gradient_start_hex": "#AA9FFF",
-      "gradient_end_hex": "#FF7399"
+      }
     },
     "level_multiplier": {
       "1": "0x45",
@@ -332,9 +328,7 @@ curl "https://api.haloneuro.com/v1/waveforms/2"
       "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
       "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
       "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
-    },
-    "gradient_start_hex": "#AA9FFF",
-    "gradient_end_hex": "#FF7399"
+    }
   },
   "level_multiplier": {
     "1": "0x45",
@@ -398,9 +392,7 @@ Typical waveform file is about 20KB, base64 expands size to about 27KB.
       "1x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_1x/original.png?12345",
       "2x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_2x/original.png?12345",
       "3x": "https://halo-api-images.s3.amazonaws.com/waveforms/2/remote_3x/original.png?12345"
-    },
-    "gradient_start_hex": "#AA9FFF",
-    "gradient_end_hex": "#FF7399"
+    }
   },
   "level_multiplier": {
     "1": "0x45",
