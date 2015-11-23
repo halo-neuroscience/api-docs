@@ -206,6 +206,7 @@ curl "https://api.haloneuro.com/v1/waveforms"
       "left": true,
       "center": true,
       "right": true,
+      "aux": false,
       "description": "All clips should be installed"
     },
     "visual_profile": {
@@ -246,6 +247,7 @@ curl "https://api.haloneuro.com/v1/waveforms"
       "left": true,
       "center": false,
       "right": true,
+      "aux": false,
       "description": "Left and Right clips should be installed"
     },
     "visual_profile": {
@@ -316,6 +318,7 @@ curl "https://api.haloneuro.com/v1/waveforms/2"
     "left": true,
     "center": false,
     "right": true,
+    "aux": false,
     "description": "Left and Right clips should be installed"
   },
   "visual_profile": {
@@ -380,6 +383,7 @@ Typical waveform file is about 20KB, base64 expands size to about 27KB.
     "left": true,
     "center": false,
     "right": true,
+    "aux": false,
     "description": "Left and Right clips should be installed"
   },
   "visual_profile": {
