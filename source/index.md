@@ -71,7 +71,7 @@ password | NA | account password
 ```json
 {
   "id": 1,
-  "version_number": 0.1,
+  "version_number": "0.0.1",
   "url": "https://halo-api-images.s3.amazonaws.com/firmware/1/raw.bin?1447288415"
 }
 ```
