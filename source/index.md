@@ -72,7 +72,7 @@ password | NA | account password
 {
   "id": 1,
   "version_number": "0.0.1",
-  "crc_32": "MjFGM0Y4NkE=",
+  "crc_32": "IfP4ag==",
   "url": "https://halo-api-images.s3.amazonaws.com/firmware/1/raw.bin?1447288415"
 }
 ```
