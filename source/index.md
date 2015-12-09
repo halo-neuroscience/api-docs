@@ -447,14 +447,18 @@ curl "https://api.haloneuro.com/v1/stimulations"
   {
     "id": 1,
     "organization_participant_id": "2",
+    "participant_name": "John Doe",
     "waveform_id": "12",
+    "waveform_name": "Total Body",
     "start_time": "2015-08-12T14:12:14.000Z",
     "end_time": "2015-08-12T14:32:14.000Z"
   },
   {
     "id": 1,
     "organization_participant_id": "2",
+    "participant_name": "John Doe",
     "waveform_id": "13",
+    "waveform_name": "Lower Body",
     "start_time": "2015-08-12T15:12:14.000Z",
     "end_time": "2015-08-12T15:32:14.000Z"
   }
