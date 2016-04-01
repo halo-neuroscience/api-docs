@@ -505,3 +505,35 @@ Parameter | Default | Description
 waveform_id | NA | valid waveform id
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
+
+# Participants
+
+## Update a participant
+
+> This is the response from logging a stimulation event
+
+```json
+  {
+    "id": 2,
+    "name": "Steve Richards",
+    "avatar": {
+      "1x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_1x.jpg?1459464321",
+      "2x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_2x.jpg?1459464321",
+      "3x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"
+    }
+    "accepted_tos_at": "2015-06-11T12:05:23.800Z"
+  }
+```
+This endpoint should include the user token via the Authorization header.
+
+### HTTP Request
+
+`PATCH https://api.haloneuro.com/v1/organization_participants/[ID]`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+name | NA | participant name
+avatar | NA | avatar image of participant
+accepted_tos_at | NA | timestamp of when participant accepted ToS
