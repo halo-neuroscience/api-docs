@@ -510,7 +510,7 @@ end_time | NA | datetime of stimulation ending (optional)
 
 ## Update a participant
 
-> This is the response from logging a stimulation event
+> This is the response from getting a participant
 
 ```json
   {
@@ -520,7 +520,7 @@ end_time | NA | datetime of stimulation ending (optional)
       "1x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_1x.jpg?1459464321",
       "2x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_2x.jpg?1459464321",
       "3x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"
-    }
+    },
     "accepted_tos_at": "2015-06-11T12:05:23.800Z"
   }
 ```
