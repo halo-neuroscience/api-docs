@@ -200,9 +200,33 @@ email | NA | user email
 password | NA | account password
 
 
-## Delete a Session (Logout)
+# Reset Password
 
-Coming Soon
+## Email Reset Password Link
+
+### HTTP Request
+
+`POST https://api.haloneuro.com/v1/reset_password`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+email | NA | user email
+
+## Reset Password with Token
+
+### HTTP Request
+
+`PUT https://api.haloneuro.com/v1/reset_password`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+reset_password_token | NA | token emailed to user
+password | NA | new account password
+password_confirmation | NA | repeated new account password
 
 # Waveforms
 
