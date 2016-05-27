@@ -291,9 +291,61 @@ the Authorization Header..</p>
 </tr>
 </tbody></table>
 
-<h2 id="delete-a-session-(logout)">Delete a Session (Logout)</h2>
+<h1 id="reset-password">Reset Password</h1>
 
-<p>Coming Soon</p>
+<h2 id="email-reset-password-link">Email Reset Password Link</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://api.haloneuro.com/v1/reset_password</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>NA</td>
+<td>user email</td>
+</tr>
+</tbody></table>
+
+<h2 id="reset-password-with-token">Reset Password with Token</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://api.haloneuro.com/v1/reset_password</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reset_password_token</td>
+<td>NA</td>
+<td>token emailed to user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>NA</td>
+<td>new account password</td>
+</tr>
+<tr>
+<td>password_confirmation</td>
+<td>NA</td>
+<td>repeated new account password</td>
+</tr>
+</tbody></table>
 
 <h1 id="waveforms">Waveforms</h1>
 
