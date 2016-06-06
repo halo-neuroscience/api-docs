@@ -551,6 +551,7 @@ This endpoint should include the user token via the Authorization header.
 Parameter | Default | Description
 --------- | ------- | -----------
 waveform_id | NA | valid waveform id
+organization_participant_id | NA | valid org participant id
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
 
