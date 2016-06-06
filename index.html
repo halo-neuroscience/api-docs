@@ -174,8 +174,9 @@ The user ID and access token are returned upon user sign in.
         </span><span class="s2">"3x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"accepted_tos_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_stimulation_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Stevens"</span><span class="p">,</span><span class="w">
@@ -185,7 +186,8 @@ The user ID and access token are returned upon user sign in.
         </span><span class="s2">"3x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://halo-api-images.s3.amazonaws.com/avatars/2/thumb_3x.jpg?1459464321"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"accepted_tos_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_stimulation_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -196,7 +198,8 @@ The user ID and access token are returned upon user sign in.
         </span><span class="s2">"3x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://halo-api-images.s3.amazonaws.com/avatars/3/thumb_3x.jpg?1459464321"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"accepted_tos_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_stimulation_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -753,7 +756,8 @@ The user&rsquo;s access token must be passed in via the Authorization header.</p
       </span><span class="s2">"3x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"accepted_tos_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="w">
+    </span><span class="s2">"last_stimulation_waveform_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_stimulation_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-11T12:05:23.800Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -791,6 +795,11 @@ The user&rsquo;s access token must be passed in via the Authorization header.</p
 <td>last_stimulation_waveform_id</td>
 <td>NA</td>
 <td>waveform ID of last stimulation initiated by participant</td>
+</tr>
+<tr>
+<td>last_stimulation_at</td>
+<td>NA</td>
+<td>timestamp of last stimulation initiated by participant</td>
 </tr>
 </tbody></table>
 
