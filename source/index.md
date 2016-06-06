@@ -111,7 +111,8 @@ NA | NA | NA
         "3x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"
       },
       "accepted_tos_at": "2015-06-11T12:05:23.800Z",
-      "last_stimulation_waveform_id": 197
+      "last_stimulation_waveform_id": 197,
+      "last_stimulation_at": "2015-06-11T12:05:23.800Z",
     },
     {
       "id": 2,
@@ -122,7 +123,8 @@ NA | NA | NA
         "3x": "https://halo-api-images.s3.amazonaws.com/avatars/2/thumb_3x.jpg?1459464321"
       },
       "accepted_tos_at": null,
-      "last_stimulation_waveform_id": null
+      "last_stimulation_waveform_id": null,
+      "last_stimulation_at": null
     },
     {
       "id": 1,
@@ -133,7 +135,8 @@ NA | NA | NA
         "3x": "https://halo-api-images.s3.amazonaws.com/avatars/3/thumb_3x.jpg?1459464321"
       },
       "accepted_tos_at": null,
-      "last_stimulation_waveform_id": null
+      "last_stimulation_waveform_id": null,
+      "last_stimulation_at": null
     }
   ]
 }
@@ -567,7 +570,8 @@ end_time | NA | datetime of stimulation ending (optional)
       "3x": "https://halo-api-images.s3.amazonaws.com/avatars/1/thumb_3x.jpg?1459464321"
     },
     "accepted_tos_at": "2015-06-11T12:05:23.800Z",
-    "last_stimulation_waveform_id": 197
+    "last_stimulation_waveform_id": 197,
+    "last_stimulation_at": "2015-06-11T12:05:23.800Z"
   }
 ```
 This endpoint should include the user token via the Authorization header.
@@ -584,3 +588,4 @@ name | NA | participant name
 avatar | NA | avatar image of participant
 accepted_tos_at | NA | timestamp of when participant accepted ToS
 last_stimulation_waveform_id | NA | waveform ID of last stimulation initiated by participant
+last_stimulation_at | NA | timestamp of last stimulation initiated by participant
