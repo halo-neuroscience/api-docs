@@ -555,6 +555,34 @@ organization_participant_id | NA | valid org participant id
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
 
+## Update A Stimulation Event
+
+> This is the response from logging a stimulation event
+
+```json
+  {
+    "id": 2,
+    "organization_participant_id": "5",
+    "waveform_id": "12",
+    "start_time": "2015-06-11T12:05:23.800Z",
+    "end_time": "2015-06-11T12:25:23.800Z"
+  }
+```
+This endpoint should include the user token via the Authorization header.
+
+### HTTP Request
+
+`PATCH https://api.haloneuro.com/v1/stimulations/[ID]`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+waveform_id | NA | valid waveform id
+organization_participant_id | NA | valid org participant id
+start_time | NA | datetime of stimulation starting
+end_time | NA | datetime of stimulation ending
+
 # Participants
 
 ## Update a participant
