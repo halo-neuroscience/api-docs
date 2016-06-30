@@ -618,3 +618,26 @@ avatar | NA | avatar image of participant
 accepted_tos_at | NA | timestamp of when participant accepted ToS
 last_stimulation_waveform_id | NA | waveform ID of last stimulation initiated by participant
 last_stimulation_at | NA | timestamp of last stimulation initiated by participant
+
+# Guest Pass Requests
+
+## Request a guest pass
+
+> This is the response from requests a guest pass
+
+```json
+  {
+    "grant_request": true
+  }
+```
+This endpoint should include the user token via the Authorization header.
+
+### HTTP Request
+
+`POST https://api.haloneuro.com/v1/guest_pass_requests`
+
+### Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+message | NA | reason for requesting a guest pass
