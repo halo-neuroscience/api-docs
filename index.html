@@ -859,6 +859,40 @@ The user&rsquo;s access token must be passed in via the Authorization header.</p
 </tr>
 </tbody></table>
 
+<h1 id="guest-pass-requests">Guest Pass Requests</h1>
+
+<h2 id="request-a-guest-pass">Request a guest pass</h2>
+
+<blockquote>
+<p>This is the response from requests a guest pass</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"grant_request"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint should include the user token via the Authorization header.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://api.haloneuro.com/v1/guest_pass_requests</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>NA</td>
+<td>reason for requesting a guest pass</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <p>The Halo API uses the following error codes:</p>
