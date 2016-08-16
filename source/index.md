@@ -46,7 +46,9 @@ The user ID and access token are returned upon user sign in.
   "id": 1,
   "name": "John Doe",
   "email": "example@haloneuro.com",
-  "access_token": "-gjzZa8aHs7M7wjyE8xU"
+  "access_token": "-gjzZa8aHs7M7wjyE8xU",
+  "last_stimulation_waveform_id": null,
+  "last_stimulation_at": null
 }
 ```
 
@@ -168,6 +170,8 @@ NA | NA | NA
   "name": "John Doe",
   "email": "example@haloneuro.com",
   "access_token": "-gjzZa8aHs7M7wjyE8xU",
+  "last_stimulation_waveform_id": null,
+  "last_stimulation_at": null,
   "organization": {
     "id": 1,
     "name": "Sparta",
@@ -535,7 +539,11 @@ NA | NA | NA
   {
     "id": 2,
     "organization_participant_id": "5",
+    "user_id": null,
     "waveform_id": "12",
+    "participant_name": "Sam Smith",
+    "user_name": null,
+    "waveform_name": "Total Body",
     "start_time": "2015-06-11T12:05:23.800Z",
     "end_time": "2015-06-11T12:25:23.800Z"
   }
@@ -551,7 +559,8 @@ This endpoint should include the user token via the Authorization header.
 Parameter | Default | Description
 --------- | ------- | -----------
 waveform_id | NA | valid waveform id
-organization_participant_id | NA | valid org participant id
+organization_participant_id | NA | valid org participant id (if user id is empty)
+user_id | NA | valid user id (if org participant id is empty)
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
 
@@ -563,7 +572,11 @@ end_time | NA | datetime of stimulation ending (optional)
   {
     "id": 2,
     "organization_participant_id": "5",
+    "user_id": null,
     "waveform_id": "12",
+    "participant_name": "Sam Smith",
+    "user_name": null,
+    "waveform_name": "Total Body",
     "start_time": "2015-06-11T12:05:23.800Z",
     "end_time": "2015-06-11T12:25:23.800Z"
   }
@@ -579,7 +592,8 @@ This endpoint should include the user token via the Authorization header.
 Parameter | Default | Description
 --------- | ------- | -----------
 waveform_id | NA | valid waveform id
-organization_participant_id | NA | valid org participant id
+organization_participant_id | NA | valid org participant id (if user id is empty)
+user_id | NA | valid user id (if org participant id is empty)
 start_time | NA | datetime of stimulation starting
 end_time | NA | datetime of stimulation ending
 
