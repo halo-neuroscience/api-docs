@@ -559,8 +559,7 @@ This endpoint should include the user token via the Authorization header.
 Parameter | Default | Description
 --------- | ------- | -----------
 waveform_id | NA | valid waveform id
-organization_participant_id | NA | valid org participant id (if user id is empty)
-user_id | NA | valid user id (if org participant id is empty)
+organization_participant_id | NA | valid org participant id (if athlete from enterprise build)
 start_time | NA | datetime of stimulation starting (default is current time)
 end_time | NA | datetime of stimulation ending (optional)
 
@@ -591,10 +590,6 @@ This endpoint should include the user token via the Authorization header.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-waveform_id | NA | valid waveform id
-organization_participant_id | NA | valid org participant id (if user id is empty)
-user_id | NA | valid user id (if org participant id is empty)
-start_time | NA | datetime of stimulation starting
 end_time | NA | datetime of stimulation ending
 
 # Participants
